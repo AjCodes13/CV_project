@@ -1,0 +1,33 @@
+import os
+from pathlib import Path
+
+class Config:
+    BASE_DIR = Path(__file__).parent.parent
+    DATA_DIR = BASE_DIR / "data"
+    PKLOT_DIR = DATA_DIR / "PKLot" / "UFPR05"
+    PROCESSED_DIR = DATA_DIR / "processed"
+    RESULTS_DIR = DATA_DIR / "results"
+    MODELS_DIR = BASE_DIR / "models"
+    
+    STANDARD_PARKING_WIDTH = 2.7  
+    STANDARD_PARKING_LENGTH = 5.0 
+    REQUIRED_CLEARANCE = 0.15 
+    
+    ROI_PIXELS_PER_METER = 50
+    CANNY_THRESHOLD1 = 50
+    CANNY_THRESHOLD2 = 150
+    HOUGH_THRESHOLD = 100
+    HOUGH_MIN_LINE_LENGTH = 50
+    HOUGH_MAX_LINE_GAP = 10
+    
+    LBP_RADIUS = 3
+    LBP_POINTS = 24
+    HOG_ORIENTATIONS = 9
+    HOG_PIXELS_PER_CELL = (8, 8)
+    HOG_CELLS_PER_BLOCK = (2, 2)
+    
+    SVM_KERNEL = 'rbf'
+    SVM_C = 1.0
+    SVM_GAMMA = 'scale'
+    TEST_SPLIT_RATIO = 0.2
+    RANDOM_STATE = 42
